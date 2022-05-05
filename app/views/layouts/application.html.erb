@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Merchant</title>
+    <title>Tom's Market - Items: <%= controller.action_name %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +10,25 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body> 
+    <div class="wrapper"> 
+      <div class="header"> 
+        <h1>Tom's Market</h1> 
+      </div> 
+
+      <p style="color: green"><%= flash[:notice] %></p> 
+
+      <div class="sidebar"> 
+        (sidebar) 
+      </div> 
+
+      <div class="main">
+        <%= yield %> 
+      </div> 
+
+      <div class="footer"> 
+        Tom's Market: Online Grocery Ordering Service
+      </div>
+    </div>
   </body>
 </html>
