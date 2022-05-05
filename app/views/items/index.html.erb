@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Items</h1>
+<h1>All Items</h1>
 
 <table>
   <thead>
@@ -16,8 +16,8 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.name %></td>
-        <td><%= item.price %></td>
+        <td><%= link_to item.name, item_path(item) %></td>
+        <td><%= print_price(item.price) %></td>
         <td><%= item.description %></td>
         <td><%= item.image_url %></td>
         <td><%= link_to 'Show', item %></td>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+<p><%= link_to 'Add New Item', new_item_path, id: "new_product" %></p>
